@@ -23,7 +23,7 @@ def inputPlayer1Letter():
     # Returns a list with the player1's letter as the first item, and the player2's letter as the second.
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print('Player1, do you want to be X or O?')
+        print('Player1, would you like to be X marks the spot or O the donut hole?')
         letter = input().upper()
 
     # the first element in the tuple is the player1's letter, the second is the  player2's letter.
@@ -41,7 +41,7 @@ def whoGoesFirst():
 
 def playAgain():
     # This function returns True if the player wants to play again, otherwise it returns False.
-    print('Players, do you want to play again? (yes or no)')
+    print('Players, do you want to challange each other again? (yes or no)')
     return input().lower().startswith('y')
 
 def makeMove(board, letter, move):
@@ -76,7 +76,7 @@ def getPlayerMove(board, turn):
     # Let the player type in his move.
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        print(turn + ': What is your next move? (1-9)')
+        print(turn + ': What is your next amazing move? (1-9)')
         move = input()
     return int(move)
 
@@ -137,7 +137,7 @@ def isBoardFull(board):
     return True
 
 
-print('Welcome to Tic Tac Toe!')
+print('Welcome to the classic game of Tic Tac Toe!')
 
 while True:
     # Reset the board
@@ -155,11 +155,11 @@ while True:
             drawBoard(theBoard)
 
             if isWinner(theBoard, player1Letter):
-                print('Hooray! player1 has won the game!')
+                print('Hooray! player1 has claimed the victory, you go have a nice day!')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
-                    print('The game is a tie!')
+                    print('The game is a tie, that\' a shame!')
                     break
                 else:
                     turn = 'player2'
@@ -171,11 +171,11 @@ while True:
             drawBoard(theBoard)
 
             if isWinner(theBoard, player2Letter):
-                print('The player2 has has won the game!')
+                print('The player2 has clamied the victory, you go have a nice day!')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
-                    print('The game is a tie!')
+                    print('The game is a tie, that\' a shame!')
                     break
                 else:
                     turn = 'player1'
