@@ -28,7 +28,7 @@ class TicTacToe:
         # Returns a list with the player1's letter as the first item, and the player2's letter as the second.
         letter = ''
         while not (letter == 'X' or letter == 'O'):
-            print('Player1, do you want to be X or O?')
+            print('Player1, would you like to be X marks the spot or O the donut hole?')
             letter = input().upper()
 
         # the first element in the tuple is the player1's letter, the second is the  player2's letter.
@@ -46,7 +46,7 @@ class TicTacToe:
 
     def playAgain(self):
         # This function returns True if the player wants to play again, otherwise it returns False.
-        print('Players, do you want to play again? (yes or no)')
+        print('Players, do you want to challange each other again? (yes or no)')
         return input().lower().startswith('y')
 
     def makeMove(self, letter, move):
@@ -81,7 +81,7 @@ class TicTacToe:
         # Let the player type in his move.
         move = ' '
         while move not in '1 2 3 4 5 6 7 8 9'.split() or not self.isSpaceFree(int(move)):
-            print(turn + ': What is your next move? (1-9)')
+            print(turn + ': What is your next amazing move? (1-9)')
             move = input()
         return int(move)
 
@@ -106,7 +106,7 @@ class TicTacToe:
         return True
 
 
-print('Welcome to Tic Tac Toe!')
+print('Welcome to the classic, loving game of Tic Tac Toe!')
 
 
 while True:
@@ -115,7 +115,7 @@ while True:
     tictactoe = TicTacToe(theBoard)
     player1Letter, player2Letter = tictactoe.inputPlayer1Letter()
     turn = tictactoe.whoGoesFirst()
-    print(turn + ' will go first.')
+    print(turn + ' will make their ultimate move.')
     gameIsPlaying = True
 
     while gameIsPlaying:
@@ -126,11 +126,11 @@ while True:
             tictactoe.drawBoard()
 
             if tictactoe.isWinner(player1Letter):
-                print('Hooray! Player 2 has won the game!')
+                print('Hooray! Player 1 has claimed the victory, you go have a nice day!')
                 gameIsPlaying = False
             else:
                 if tictactoe.isBoardFull():
-                    print('The game is a tie!')
+                    print('The game is a tie, that\'s a shame!')
                     break
                 else:
                     turn = 'player2'
@@ -142,11 +142,11 @@ while True:
             tictactoe.drawBoard()
 
             if tictactoe.isWinner(player2Letter):
-                print('Hooray! Player 2 has won the game!')
+                print('Hooray! Player 2 has claimed the victory, you go have a nice day!')
                 gameIsPlaying = False
             else:
                 if tictactoe.isBoardFull():
-                    print('The game is a tie!')
+                    print('The game is a tie, that\'s a shame!')
                     break
                 else:
                     turn = 'player1'
